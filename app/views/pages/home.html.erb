@@ -1,0 +1,26 @@
+<h1>Welcome to the Spoon</h1>
+<h2>Were you can find the best restaurants</h2>
+
+<form action="/restaurants" method="get">
+  <input type="text" name="food_type" placeholder="What kind of food?">
+  <input type="submit">
+</form>
+
+<form action="/restaurants" method="post">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <input type="text" name="name" placeholder="Name">
+  <input type="text" name="address" placeholder="Address">
+  <input type="submit">
+</form>
+
+<!-- <a href="/restaurants">List Restaurants</a> -->
+<%= link_to "List Restaurants", restaurants_path   %>
+
+
+
+
+
+
+
+
+

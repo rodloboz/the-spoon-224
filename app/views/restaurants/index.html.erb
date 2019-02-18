@@ -1,0 +1,32 @@
+<h1>Restaurants</h1>
+
+
+<%#= Time.now %>
+
+<% categories = ['japanese', 'portuguese', 'italian', 'chinese', 'american']   %>
+
+<ol>
+  <% categories.each do |category| %>
+    <li><%= category.capitalize %></li>
+  <% end %>
+</ol>
+
+<p>You picked: <%= @category %></p>
+
+<table>
+  <thead>
+    <th>Name</td>
+    <th>Address</td>
+  </thead>
+  <tbody>
+    <% @restaurants.each do |id, restaurant| %>
+    <tr>
+      <td><%= restaurant[:name] %></td>
+      <td><%= restaurant[:address] %></td>
+      <td>
+        <%= link_to "Show", restaurant_path(id) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
